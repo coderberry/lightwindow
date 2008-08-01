@@ -1,0 +1,42 @@
+Lightwindow
+===========
+
+Examine the public methods of lightwindow_helper.rb. They will all look familiar, much like the existing link helpers, except that they work with lightwindow. You should not need to interact with the javascript directly.
+
+Lightwindow provides three helpers which are used instead of a regular “link_to” helper when linking to a redbox.
+
+  link_to_lightwindow(name, link, html_options = {})
+
+Available HTML Options:
+
+  :href             - The hyperlink for the window
+  :title            - Title of window
+  :author           - Author of window
+  :caption          - The Caption for the window
+  :rel              - Set the rel tag
+  :top              - Top position of the window
+  :left             - Left position of the window
+  :type             - The type of the window you want to change it too
+  :showImages       - How many images to show
+  :height           - The height of the window
+  :width            - The width of the window
+  :loadingAnimation - Make the Loading Cover skip the animation
+  :iframeEmbed 		  - Embed the Media into an iframe instead of a div
+  :form             - The name of the form
+
+Also, make sure you are including the correct javascript and css files in your layouts.
+
+  <%= javascript_include_tag 'lightwindow' %>
+  <%= stylesheet_link_tag 'default', 'lightwindow' %> # 'default' is optional
+  
+To link to an existing element (typically hidden), you can use the # sign before the element id.
+
+  <%= link_to_lightwindow("Open Hidden Window", "#element_id", :caption => "This is my hidden window") %>
+
+
+More Info
+=========
+
+For documentation on the Lightwindow library, go to:
+
+	http://stickmanlabs.com/lightwindow
